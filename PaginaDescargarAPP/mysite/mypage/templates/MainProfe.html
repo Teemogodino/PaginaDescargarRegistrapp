@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+    <!-- version de desktop only -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>RegistrAPP</title>
+</head>
+<body>
+    <header>
+        <h3>REGISTRAPP</h3>
+        <a href="regAsistencia">TOMAR ASISTENCIA</a>
+        <a href="login">SALIR</a>
+
+    </header>
+<div id="cuerpo">
+        <div id="cuerpoIzquierda">
+            <h1>DESCARGA</h1> 
+            <h2>AQUI</h2>
+            <div id="contenedorQR">
+                <!-- data=[URL-encoded-text]&size=[pixels]x[pixels] -->
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://drive.google.com/drive/folders/1HBpZoaf1iWxmje44rPA6xxGKew5dEHMy?usp=sharing &size=[300]x[300]" alt="codigoQR" id="QRImg">
+            </div>
+        </div>
+        <div id="cuerpoDerecha">
+            <div id="Imagen">
+            </div>
+            <div id="texto">
+                <h2> RegistrAPP</h2>
+                <p>La aplicaccion que facilita la toma de assitencia.</p>
+                <ul>
+                    <li>Manten registro de tu asistencia de manera facil</li>
+                    <li>Toma asistencia con unicamente escanear un codigo QR</li>
+                    <li>Interfaz de usuario intuitiva </li>
+                </ul>
+                <h2>¿Como puedes descargar RegistrAPP?</h2>
+                <p> Escanea el codigo QR, este te llevara a un archivo de google drive el cual es una APK, descarga e intsala este archivo para contar con
+                    RegistrAPP en tu dispositivo.
+                </p>
+            </div>
+            <div id="footer">
+                <h2>
+                    Contactos
+                </h2>
+                <p>
+                    En caso de dudas y consultas puedes escribirnos en nuestras redes socciales y contactos
+                </p>
+                <ul>
+                    <li>Gmail:RegistrAPP.contactos@gmail.com</li>
+                    <li>X: @RegistrAPP_Soporte</li>
+                    <li>Instagram: @RegistrAPP_soporte</li>
+                </ul>
+            </div>
+
+        </div>
+
+</div>
+</body>
+
+
+</html>

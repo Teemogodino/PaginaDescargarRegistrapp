@@ -1,0 +1,467 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+input, select, textarea {
+    all: unset;
+    border: none;
+    background: none;
+    font-family: inherit;
+}
+
+body{
+    background-color: white;
+    padding:0px;
+    margin: 0px;
+    width: 100%;
+    height: 200%;
+}
+
+header {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    color: white; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    padding: 1em;
+    text-align: center;
+    align-items: center;
+    width: 100%; 
+    box-sizing: border-box; 
+}
+
+header > a{
+    color: inherit;
+    font-weight: 600;
+}
+
+#cuerpo {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los hijos pasen a otra fila en pantallas pequeñas */
+    width: 100%;
+    min-height: 100%;
+    padding-top: 5em;
+}
+
+#cuerpoDerecha {
+    width: 60%; /* Ancho en pantallas grandes */
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+}
+
+#cuerpoIzquierda {
+    width: 40%; /* Ancho en pantallas grandes */
+    background-color: #FFE4B5;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 40px;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    color: black;
+}
+
+#cuerpoIzquierda > h1 {
+    margin-bottom: 0px;
+}
+
+#cuerpoIzquierda > h2 {
+    margin-top: 0px;
+}
+
+#contenedorQR {
+    padding: 15px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+#texto {
+    padding: 15px;
+    margin-bottom: 5vh;
+}
+
+#texto > h2 {
+    font-size: 40px;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 750;
+    font-style: normal;
+}
+
+#texto > p {
+    font-size: 15px;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    color: grey;
+}
+
+#Imagen {
+    width: 100%; /* Full width of parent */
+    height: 200px; /* Fixed height */
+    background-image: url('https://images8.alphacoders.com/105/1053415.jpg');
+    background-size: cover; /* Scales image to cover entire container */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat;
+}
+
+#imagenClassroom {
+    width: 100%; /* Ensures the image spans the full width of the container */
+    object-fit: cover; /* Maintains aspect ratio and covers the container */
+    object-position: center; /* Centers the image within the container */
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+    #cuerpo {
+        flex-direction: column; /* Cambia a diseño vertical */
+    }
+
+    #cuerpoIzquierda, #cuerpoDerecha {
+        width: 100%; /* Ambos ocupan el 100% del ancho */
+    }
+
+    #cuerpoIzquierda {
+        padding: 2rem; /* Ajusta el padding en pantallas pequeñas */
+        font-size: 35px; /* Reduce el tamaño de fuente */
+    }
+
+    #cuerpoDerecha {
+        padding: 2rem; /* Ajusta el padding en pantallas pequeñas */
+    }
+
+    #texto > h2 {
+        font-size: 30px; /* Reduce el tamaño de los títulos */
+    }
+
+    #texto > p {
+        font-size: 14px; /* Reduce el tamaño del texto */
+    }
+}
+
+ul > li{
+    color:grey;
+    font-size: 15px;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+}
+
+#footer{
+    padding: 15px;
+    height: 35vh;
+    width: 100%;
+    align-self: flex-end;
+    background-color: black;
+    bottom: 0;
+    left: 50;
+    
+}
+#footer >h2 {
+    color:aliceblue;
+    font-size: 25px;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+}
+#footer >p{
+    color:grey;
+    font-size: 15px;
+    font-family: "Oswald", sans-serif;
+}
+
+#footer >li{
+    color:grey;
+    font-size: 15px;
+    font-family: "Oswald", sans-serif;
+}
+
+
+/* 
+CSS DE EL LOGIN!!!!!!!!
+*/
+
+
+#cuerpoLogin{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFE4B5;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+}
+
+#contenedorLogin{
+    background-color: white;
+    height: auto;
+    padding: 15px;
+    width: 40%;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#contenedorLogin> form > input {
+    all: unset;
+    border-bottom: 2px solid grey;
+    width: 80%;
+    height: 30px;
+}
+#contenedorLogin> form>input:focus {
+    border-bottom: 2px solid #FFE4B5;
+    box-shadow: 0 2px 0 0 #FFE4B5;
+    outline: none; 
+}
+#contenedorLogin > form > label {
+    font-weight: 600;
+    font-size: 22px;
+}
+#contenedorLogin > form > button{
+    all: unset;
+    width: 50%;
+    padding: 10px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    border: 2px solid grey;;
+    cursor: pointer;
+    
+}
+#contenedorLogin>form{
+    height: auto;
+    padding: 15px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#contenedorLogin > form > button:hover {
+    background-color: #FFE4B5; 
+    color: white;
+    font-weight: 600;
+
+}
+
+
+/*
+CSS DE REGISTRAR ASISTENCIA
+*/
+#cuerpoAsistencia{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFE4B5;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+
+}
+
+#contenedorAsistencia{
+    background-color: white;
+    height: auto;
+    padding: 15px;
+    min-width: 65%;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+#contenedorAsistencia> form > input {
+    all: unset;
+    border-bottom: 2px solid grey;
+    width: 80%;
+    height: 30px;
+}
+#contenedorAsistencia> form > input [type=time]{
+  
+}
+#contenedorAsistencia> form>input:focus {
+    border-bottom: 2px solid #FFE4B5;
+    box-shadow: 0 2px 0 0 #FFE4B5;
+    outline: none; 
+}
+#contenedorAsistencia > form > label {
+    font-weight: 600;
+    font-size: 22px;
+}
+#contenedorAsistencia > form > button{
+    all: unset;
+    width: 50%;
+    padding: 10px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    border: 2px solid grey;;
+    cursor: pointer;
+    
+}
+#contenedorAsistencia>form{
+    height: auto;
+    padding: 15px;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#contenedorAsistencia > form > button:hover {
+    background-color: #FFE4B5; 
+    color: white;
+    font-weight: 600;
+
+}
+
+#contenedorQRAsistencia{
+    height: 300px;
+    width: 300px;
+    padding: 15px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+}
+#contenedorAsistencia > form > input[type=date] {
+    width: 30%;
+    color: grey;
+    margin-top: 0px;
+}
+
+#contenedorAsistencia > form > h2 {
+    margin: 0px;
+}
+#contenedorAsistencia > form > #nombProfesor {
+    color: grey;
+    margin-top: 0px;
+}
+
+#contenedorAsistencia > form > select{
+    all: unset;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23999' d='M2 0L0 2h4z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    border-bottom: 2px solid grey;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    font-size: 16px;
+    width: 70%;
+    height: auto;
+    margin-bottom: 10px;
+}
+#contenedorTiempo{
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; 
+    width: 80%;
+    font-weight: 600;
+}
+#contenedorTiempo>input{
+    font-weight: 400;
+    all: unset;
+    border-bottom: 2px solid grey;
+}
+#contenedorAsistencia > form > select-options {
+    display: none; 
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: darken(#FFE4B5, 5);
+}
+@media screen and (max-width: 800px) {
+    #cuerpo {
+        display: flex;
+        flex-direction: column; /* Cambia a dirección vertical */
+    }
+
+    #cuerpoIzquierda, 
+    #cuerpoDerecha {
+        width: 100%; /* Ambos ocupan todo el ancho */
+    }
+
+    #cuerpoIzquierda {
+        order: -1; /* Fuerza a que la parte izquierda vaya primero */
+    }
+}
+@media screen and (max-width: 800px) {
+    #contenedorQR {
+        display: none; /* Oculta completamente el contenedor del QR */
+    }
+}
+/* Estilo base del botón */
+    button {
+    margin-top: -35px;
+    display: inline-block;
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de letra */
+    color: #FFE4B5;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  
+  /* Ajustes responsivos */
+  @media (max-width: 768px) {
+    button {
+      padding: 8px 15px; /* Reducir espaciado en pantallas pequeñas */
+      font-size: 14px; /* Reducir tamaño de letra */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    button {
+      padding: 6px 10px; /* Aún más compacto en pantallas muy pequeñas */
+      font-size: 12px; /* Tamaño más pequeño */
+    }
+  }
+  @media screen and (min-width: 800px) {
+    button {
+        display: none; /* Oculta completamente el contenedor del QR */
+    }
+}
+

@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Asistencia</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h3>REGISTRAPP</h3>
+        <a href="homeProfe">VOLVER</a>
+        <a href="login">SALIR</a>
+
+    </header>
+
+    <div id="cuerpoAsistencia">
+    <div id="contenedorAsistencia">
+        <div id="contenedorQRAsistencia">
+            <img src="https://icons.veryicon.com/png/o/miscellaneous/simple-and-round-line-mark/qr-code-125.png" id="QRImg" width="250px" height="250px">
+        </div>
+
+        <form action="{% url 'regAsistencia' %}" method="POST">
+            {% csrf_token %}
+            <h1 > TOMAR ASISTENCIA</h1>
+            <h2  > Profesor </h2>
+            <p id="nombProfesor">{{profesor_name}}</p>
+            <label for="Materia"> Materia: </label> 
+            <select id="Materia" name="Materia">
+            {% for asignatura in Materias %}
+                <option>{{ asignatura }}</option>
+            {% empty %}
+                <option>No hay asignaturas asignadas.</option>
+            {% endfor %}
+            </select>
+            <label for="fechaClase">Fecha de la clase </label>   
+            <input type="date" name="fechaClase">
+            <div id="contenedorTiempo">
+                <label for="horaInicio" >Hora de inicio:</label> 
+                <input type="time"  name="horaInicio">
+                <label for="horaFin">Hora de finalizacion:</label>   
+                <input type="time" name="horaFin">
+            </div> 
+            <button type="button" onclick="generarQR()">Generar</button>
+            <input type="hidden" id="combinedValues" name="combinedValues">
+        </form> 
+    </div>
+
+
+    </div>
+
+    <script>
+        let contenedorQR = document.getElementById("contenedorQRAsistencia");
+        let QRImg = document.getElementById("QRImg");
+
+        // Function to generate QR code and collect form values
+        function generarQR(){
+            // Get values from the form fields
+            let materia = document.getElementById("Materia").value;
+            let fechaClase = document.querySelector("input[name='fechaClase']").value;
+            let horaInicio = document.querySelector("input[name='horaInicio']").value;
+            let horaFin = document.querySelector("input[name='horaFin']").value;
+            
+            // Combine the values into one string (you can format this as needed)
+            let combinedValues = `Materia: ${materia}, Fecha: ${fechaClase}, Hora Inicio: ${horaInicio}, Hora Fin: ${horaFin}`;
+
+            // Log the combined values for debugging purposes
+            console.log("Combined Values: ", combinedValues);
+            
+            // Check for any empty fields that might cause issues
+            if (!materia || !fechaClase || !horaInicio || !horaFin) {
+                alert("Por favor complete todos los campos antes de generar el QR.");
+                return;  // Stop execution if any field is empty
+            }
+
+            // Store the combined values in the hidden input field
+            document.getElementById("combinedValues").value = combinedValues;
+
+            // Encode the combined values before passing them to the QR code API
+            let encodedData = encodeURIComponent(combinedValues);
+
+            // Log the encoded data for debugging purposes
+            console.log("Encoded Data: ", encodedData);
+
+            // Generate the URL for the QR code
+            let qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodedData}`;
+            
+            // Log the final QR URL
+            console.log("QR URL: ", qrUrl);
+
+            // Update the image source to display the generated QR code
+            QRImg.src = qrUrl;
+        }
+    </script>
+    
+</body>
+</html>
